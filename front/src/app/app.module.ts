@@ -7,6 +7,8 @@ import { AppRouting } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 
 @NgModule({
   declarations: [
@@ -16,8 +18,11 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HomeModule,
     AppRouting,
-    HomeModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDR4pmhlLIsbc4bvHYDVjQzd1p5CWMmV5M'
+    })
   ],
   providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]

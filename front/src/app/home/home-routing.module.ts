@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
 	{
 		path:'',
 		component:HomeComponent,
 		children:[
-			{ path:'',component:WorkspaceComponent },
+			{ path:'',component:MainComponent },
+			{ path:'area',component:WorkspaceComponent },
 			{ path:'**', redirectTo:'', pathMatch:'full' }
 		]
 	}

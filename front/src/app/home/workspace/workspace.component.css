@@ -1,0 +1,8 @@
+.container-fluid{
+	padding:0px;
+	display: flex;
+	width: 100%;
+}
+.sebm-google-map-container {
+  height: 800px;
+}
