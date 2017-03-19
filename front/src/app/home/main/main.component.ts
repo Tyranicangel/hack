@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../api.service';
+import { Router } from '@angular/router';
+import { LoaderService } from '../../loader/loader.service';
 
 @Component({
   selector: 'app-main',
@@ -7,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 	city:string;
-  constructor() { 
+  constructor(private router:Router, private api:ApiService) { 
   	this.city="";
   }
 
   ngOnInit() {
+  }
+
+  ngOnViewInit(){
+  	this.api.get("city/all")
   }
 
 }
